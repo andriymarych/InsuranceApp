@@ -1,27 +1,23 @@
 package com.marych.insuranceApp.userInterface.derivativeMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
+import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.info.CompanyInfoService;
+import com.marych.insuranceApp.service.info.document.derivative.DerivativeInfo;
+import com.marych.insuranceApp.service.info.document.policy.PolicyInfo;
 import com.marych.insuranceApp.user.UserSession;
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.document.policy.ObservableInsurancePolicy;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -61,7 +57,7 @@ public class CreateDerivativeController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        insuranceSpecialists.getItems().addAll(getInsuranceSpecialists());
+        insuranceSpecialists.getItems().addAll(CompanyInfoService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
         policyId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("policyId"));
         compulsory.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Boolean>("compulsory"));
         insuredId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("holderId"));
@@ -77,50 +73,16 @@ public class CreateDerivativeController implements Initializable {
 
     @FXML
     private void returnButton(ActionEvent event) {
-        loadWindow(event, "/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/SelectCompanyScene.fxml");
-    }
-
-    private void loadWindow(ActionEvent event, String name) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource(name)));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private ArrayList<String> getInsuranceSpecialists() {
-        ArrayList<String> insuranceSpecialists = new ArrayList<>();
-        String companyName = AppData.getInstance().get("insuranceCompany");
-        String query = "SELECT CONCAT(first_name,' ',last_name) as fullName, user_id, company_id  " +
-                "FROM insurance_specialist " +
-                "INNER JOIN insurance_company " +
-                "ON insurance_specialist.insurance_company_id = insurance_company.company_id " +
-                "WHERE insurance_company.name  = '" + companyName + "'";
-        ResultSet resultSet = DatabaseHandler.getInstance().execQuery(query);
-        try {
-            while (resultSet.next()) {
-                insuranceSpecialists.add(resultSet.getString("fullName"));
-                derivativeCompanyId = resultSet.getInt("company_id");
-                derivativeInsurerId = resultSet.getInt("user_id");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return insuranceSpecialists;
+        WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/SelectCompanyScene.fxml")));
     }
 
     @FXML
     private void createDerivative(ActionEvent event) {
         if (checkPolicyList()) {
-            derivativeId = DatabaseHandler.getInstance().getNextDerivativeId();
+            derivativeId = DerivativeInfo.getInstance().getNextDerivativeId();
             addDerivative();
             addPolicyList();
-            loadWindow(event, "../derivativeMenu/SuccessDerivativeCreationScene.fxml");
+            WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("../derivativeMenu/SuccessDerivativeCreationScene.fxml")));
         }
     }
 
@@ -168,7 +130,6 @@ public class CreateDerivativeController implements Initializable {
         }
         SQL.deleteCharAt(SQL.length() - 1);
         DatabaseHandler.getInstance().execUpdate(SQL.toString());
-
     }
 
     private boolean checkPolicyList() {
@@ -180,7 +141,7 @@ public class CreateDerivativeController implements Initializable {
                 errorLabel.setText("Введіть мінімум 2 страхових договори для формування деривативу");
             }
             policyNo = Integer.parseInt(s);
-            if (!DatabaseHandler.getInstance().containsPolicy(userId, policyNo)) {
+            if (!PolicyInfo.getInstance().containsPolicy(userId, policyNo)) {
                 errorLabel.setText("Страхового договору № " + policyNo + " не існує");
                 return false;
             }

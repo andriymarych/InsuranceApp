@@ -4,8 +4,8 @@ package com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insur
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.service.WindowLoader;
 import com.marych.insuranceApp.service.creation.CreatePolicyControllerService;
-import com.marych.insuranceApp.service.information.CompanyInformationService;
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.CompanyInfoService;
+import com.marych.insuranceApp.service.info.AppData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -39,7 +39,7 @@ public class CreateLiabilityPolicyController extends CreatePolicyControllerServi
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        insuranceSpecialists.getItems().addAll(CompanyInformationService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
+        insuranceSpecialists.getItems().addAll(CompanyInfoService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
     }
     @FXML
     private void createPolicy(ActionEvent event) {

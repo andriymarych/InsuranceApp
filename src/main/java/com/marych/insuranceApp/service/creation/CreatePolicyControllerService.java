@@ -1,9 +1,10 @@
 package com.marych.insuranceApp.service.creation;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.service.information.AppData;
-import com.marych.insuranceApp.service.information.CompanyInformationService;
+import com.marych.insuranceApp.service.info.AppData;
+import com.marych.insuranceApp.service.info.CompanyInfoService;
 import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.info.document.policy.PolicyInfo;
 import com.marych.insuranceApp.user.UserSession;
 import com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insurancePolicies.InsurancePolicyDaoSender;
 import javafx.event.ActionEvent;
@@ -32,7 +33,7 @@ public abstract class CreatePolicyControllerService implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        insuranceSpecialists.getItems().addAll(CompanyInformationService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
+        insuranceSpecialists.getItems().addAll(CompanyInfoService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
     }
 
 
@@ -41,10 +42,10 @@ public abstract class CreatePolicyControllerService implements Initializable {
     }
 
     public void createInsurancePolicy() {
-        policyId = DatabaseHandler.getInstance().getNextPolicyId();
+        policyId = PolicyInfo.getInstance().getNextPolicyId();
         int holderId = UserSession.getInstance().getUserId();
         int insurerId = Integer.parseInt(insuranceSpecialists.getValue().split(" ")[0]);
-        String companyId = Objects.requireNonNull(CompanyInformationService.getInsuranceSpecialist(insurerId)).getCompanyId();
+        String companyId = Objects.requireNonNull(CompanyInfoService.getInsuranceSpecialist(insurerId)).getCompanyId();
         boolean compulsory = checkBox.isSelected();
         int insuredSum = Integer.parseInt(insuranceSumField.getText());
         short riskPercentage = Short.parseShort(riskPercentageField.getText());

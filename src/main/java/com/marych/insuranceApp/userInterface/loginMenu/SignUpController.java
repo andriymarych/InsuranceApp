@@ -1,8 +1,9 @@
 package com.marych.insuranceApp.userInterface.loginMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.service.diia.DiiaCopy;
+import com.marych.insuranceApp.service.info.UserInfoService;
 import com.marych.insuranceApp.service.validation.EmailValidation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,8 +33,9 @@ public class SignUpController {
 
     @FXML
     private void signUpButton(ActionEvent event) {
+        UserInfoService infoService = new UserInfoService();
         String login = loginField.getText();
-        if (!DatabaseHandler.getInstance().checkLogin(login)) {
+        if (!infoService.checkLogin(login)) {
             errorLabel.setText("Користувач із таким логіном уже існує");
         } else if (passwordField.getText().equals("")) {
             errorLabel.setText("Введіть пароль");
@@ -50,7 +52,8 @@ public class SignUpController {
     }
 
     private void addUserData() {
-        int userId = DatabaseHandler.getInstance().getNextUserId();
+        UserInfoService infoService = new UserInfoService();
+        int userId = infoService.getNextUserId();
         int diiaId = Integer.parseInt(AppData.getInstance().get("diiaId"));
         DiiaCopy diiaCopy = new DiiaCopy(diiaId);
         String query = "INSERT INTO \"user\" " + " VALUES (" +

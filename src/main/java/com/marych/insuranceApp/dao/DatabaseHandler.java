@@ -66,71 +66,6 @@ public class DatabaseHandler {
         }
     }
 
-    public int getNextUserId() {
-        try {
-            String SQL = "SELECT MAX(id) FROM \"user\" ";
-            ResultSet resultSet = execQuery(SQL);
-            resultSet.next();
-            return resultSet.getInt(1) + 1;
-        } catch (SQLException ex) {
-            System.out.println("Exception at execQuery:dataHandler" + ex.getLocalizedMessage());
-            return 0;
-        }
-    }
-
-    public int getNextPolicyId() {
-        try {
-            Statement statement = connection.createStatement();
-            String SQL = "SELECT MAX(policy_id) FROM \"insurance_policy\" ";
-            ResultSet resultSet = statement.executeQuery(SQL);
-            resultSet.next();
-            return resultSet.getInt(1) + 1;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public int getNextDerivativeId() {
-        try {
-            Statement statement = connection.createStatement();
-            String SQL = "SELECT MAX(derivative_id) FROM \"derivative\" ";
-            ResultSet resultSet = statement.executeQuery(SQL);
-            resultSet.next();
-            return resultSet.getInt(1) + 1;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public boolean checkLogin(String login) {
-        String SQL = "SELECT * FROM \"user\" WHERE login = '" + login + "'";
-        ResultSet resultSet = execQuery(SQL);
-        try {
-            if (resultSet.next()) {
-                return false;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    public boolean containsPolicy(int userId, int policyNo) {
-        String SQL = "SELECT * FROM \"insurance_policy\" WHERE policy_id = '" + policyNo + "'" +
-                "AND holder_id = " + userId;
-        ResultSet resultSet = execQuery(SQL);
-        try {
-            if (resultSet.next()) {
-                return true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     public ObservableList<ObservableInsurancePolicy> getInsurancePolicyData(int userId) {
         ObservableList<ObservableInsurancePolicy> observableInsurancePolicyList = FXCollections.observableArrayList();
         String SQL = "SELECT * FROM \"insurance_policy\" WHERE holder_id = " + userId + "ORDER BY policy_id";
@@ -341,7 +276,5 @@ public class DatabaseHandler {
         }
         return carInsurancePolicyList;
     }
-
-
 }
 

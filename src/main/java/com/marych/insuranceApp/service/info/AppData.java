@@ -1,4 +1,4 @@
-package com.marych.insuranceApp.service.information;
+package com.marych.insuranceApp.service.info;
 
 import java.util.HashMap;
 import java.util.Map;

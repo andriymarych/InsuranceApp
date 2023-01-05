@@ -2,7 +2,7 @@ package com.marych.insuranceApp.userInterface.loginMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.user.UserSession;
-import com.marych.insuranceApp.service.information.AppLogger;
+import com.marych.insuranceApp.service.info.AppLogger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

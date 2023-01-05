@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyDetailsController.java" afterDir="false" />
-    </list>
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Add info Services" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672943902405</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added new Insurance Policy Hierarchy&#10;&#10;Refactoring">
+      <created>1672944298363</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672944298363</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add info Services">
+      <created>1672952162362</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672952162362</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +186,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added new Policy Hierarchy&#10;&#10;Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new Policy Hierarchy&#10;&#10;Refactoring" />
+    <MESSAGE value="Added new Insurance Policy Hierarchy&#10;&#10;Refactoring" />
+    <MESSAGE value="Add info Services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add info Services" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,7 +204,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeController.java</url>
-          <line>70</line>
+          <line>64</line>
           <properties class="com.marych.insuranceApp.userInterface.derivativeMenu.ViewDerivativeController" method="viewPolicyList">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -200,7 +213,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/FilterDerivativeController.java</url>
-          <line>76</line>
+          <line>70</line>
           <properties class="com.marych.insuranceApp.userInterface.derivativeMenu.FilterDerivativeController" method="filterButton">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -209,23 +222,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeController.java</url>
-          <line>118</line>
+          <line>80</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyController.java</url>
           <line>80</line>
           <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java</url>
-          <line>292</line>
-          <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePersonalPolicyController.java</url>

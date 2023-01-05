@@ -1,7 +1,7 @@
 package com.marych.insuranceApp.userInterface.loginMenu;
 
 
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.service.diia.DiiaCopy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

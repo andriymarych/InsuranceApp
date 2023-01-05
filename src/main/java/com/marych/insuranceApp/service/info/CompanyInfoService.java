@@ -1,4 +1,4 @@
-package com.marych.insuranceApp.service.information;
+package com.marych.insuranceApp.service.info;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.user.InsuranceSpecialist;
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class CompanyInformationService {
+public class CompanyInfoService {
 
     public static ArrayList<String> getInsuranceSpecialists(String companyName) {
         ArrayList<String> insuranceSpecialists = new ArrayList<>();

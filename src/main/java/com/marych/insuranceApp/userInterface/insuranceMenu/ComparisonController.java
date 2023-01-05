@@ -2,7 +2,7 @@ package com.marych.insuranceApp.userInterface.insuranceMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.user.UserSession;
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurancePolicy;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

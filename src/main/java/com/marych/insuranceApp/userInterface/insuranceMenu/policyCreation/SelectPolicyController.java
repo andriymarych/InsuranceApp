@@ -1,6 +1,6 @@
 package com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation;
 
-import com.marych.insuranceApp.service.information.AppData;
+import com.marych.insuranceApp.service.info.AppData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
