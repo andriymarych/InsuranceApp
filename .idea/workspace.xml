@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HrDVsbpzSZK7nmoSO0ATcg7wKW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/andriymarych/Desktop/Applied Programming/Insurance app/InsuranceAppFx/InsuranceApp/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5275862",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/userInterface/derivativeMenu" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/images" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/userInterface/" />
+      <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/userInterface/loginMenu/mainMenu" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.marych.insuranceApp.userInterface.derivativeMenu" />
+      <recent name="com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insurancePolicies" />
+      <recent name="com.marych.insuranceApp.userInterface.loginMenu" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="com.marych.insuranceApp.InsuranceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.marych.insuranceApp.InsuranceApplication" />
+      <module name="InsuranceApp" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;$USER_HOME$/Desktop/Java/javafx-sdk-19/lib&quot; --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.marych.insuranceApp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.marych.insuranceApp.InsuranceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="" />
+      <created>1669034335525</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669034335525</updated>
+      <workItem from="1669034336974" duration="464000" />
+      <workItem from="1669044580256" duration="6192000" />
+      <workItem from="1669053662442" duration="5641000" />
+      <workItem from="1669148630793" duration="8678000" />
+      <workItem from="1669162153173" duration="171000" />
+      <workItem from="1669162455473" duration="916000" />
+      <workItem from="1669224517187" duration="1000" />
+      <workItem from="1669227350360" duration="7436000" />
+      <workItem from="1669246200517" duration="2500000" />
+      <workItem from="1669248739640" duration="4180000" />
+      <workItem from="1669288384289" duration="18000" />
+      <workItem from="1669310954553" duration="20899000" />
+      <workItem from="1669368363354" duration="84979000" />
+      <workItem from="1669921490303" duration="3633000" />
+      <workItem from="1669937600489" duration="8733000" />
+      <workItem from="1670004222764" duration="2640000" />
+      <workItem from="1670863312131" duration="66000" />
+      <workItem from="1670863574643" duration="62000" />
+      <workItem from="1671622667353" duration="898000" />
+      <workItem from="1672664344168" duration="17508000" />
+      <workItem from="1672872651640" duration="4260000" />
+      <workItem from="1672933800938" duration="82000" />
+      <workItem from="1672934124425" duration="99000" />
+      <workItem from="1672934269380" duration="823000" />
+      <workItem from="1672935154916" duration="132000" />
+      <workItem from="1672935820460" duration="240000" />
+      <workItem from="1672936063684" duration="27000" />
+      <workItem from="1672936093610" duration="49000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/main/MainController.java</url>
+          <line>62</line>
+          <properties class="com.marych.insuranceApp.userInterface.main.MainController" method="ExitButton">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeController.java</url>
+          <line>70</line>
+          <properties class="com.marych.insuranceApp.userInterface.derivativeMenu.ViewDerivativeController" method="viewPolicyList">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/FilterDerivativeController.java</url>
+          <line>76</line>
+          <properties class="com.marych.insuranceApp.userInterface.derivativeMenu.FilterDerivativeController" method="filterButton">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeController.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java</url>
+          <line>284</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java</url>
+          <line>292</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePersonalPolicyController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java</url>
+          <line>255</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javafx.event.ActionEvent" memberName="target" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/InsuranceApp$InsuranceApplication.ic" NAME="InsuranceApplication Coverage Results" MODIFIED="1670863364998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.marych.insuranceApp.*</FILTER>
+    </SUITE>
+  </component>
+</project>
