@@ -2,9 +2,9 @@ package com.marych.insuranceApp.userInterface.insuranceMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.user.UserSession;
-import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurance;
-import com.marych.insuranceApp.document.policy.policyType.personal.PersonalInsurance;
-import com.marych.insuranceApp.document.policy.policyType.property.PropertyInsurance;
+import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurancePolicy;
+import com.marych.insuranceApp.document.policy.policyType.personal.LifeInsurancePolicy;
+import com.marych.insuranceApp.document.policy.policyType.property.CarInsurancePolicy;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,53 +25,53 @@ import java.util.ResourceBundle;
 
 public class ViewPolicyDetailsController implements Initializable {
     @FXML
-    private TableView<PersonalInsurance> personalView;
+    private TableView<LifeInsurancePolicy> personalView;
     @FXML
-    private TableColumn<PersonalInsurance, Integer> personalPolicyId;
+    private TableColumn<LifeInsurancePolicy, Integer> personalPolicyId;
     @FXML
-    private TableColumn<PersonalInsurance, String> personalFirstName;
+    private TableColumn<LifeInsurancePolicy, String> personalFirstName;
     @FXML
-    private TableColumn<PersonalInsurance, String> personalLastName;
+    private TableColumn<LifeInsurancePolicy, String> personalLastName;
     @FXML
-    private TableColumn<PersonalInsurance, String> personalAddress;
+    private TableColumn<LifeInsurancePolicy, String> personalAddress;
     @FXML
-    private TableColumn<PersonalInsurance, String> personalBirthDate;
+    private TableColumn<LifeInsurancePolicy, String> personalBirthDate;
 
 
     @FXML
-    private TableView<ProfessionalActivityInsurance> liabilityView;
+    private TableView<ProfessionalActivityInsurancePolicy> liabilityView;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, Integer> liabilityPolicyId;
+    private TableColumn<ProfessionalActivityInsurancePolicy, Integer> liabilityPolicyId;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, String> liabilityFirstName;
+    private TableColumn<ProfessionalActivityInsurancePolicy, String> liabilityFirstName;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, String> liabilityLastName;
+    private TableColumn<ProfessionalActivityInsurancePolicy, String> liabilityLastName;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, String> liabilityCompanyName;
+    private TableColumn<ProfessionalActivityInsurancePolicy, String> liabilityCompanyName;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, String> liabilityProfessionalActivity;
+    private TableColumn<ProfessionalActivityInsurancePolicy, String> liabilityProfessionalActivity;
     @FXML
-    private TableColumn<ProfessionalActivityInsurance, String> liabilityPosition;
+    private TableColumn<ProfessionalActivityInsurancePolicy, String> liabilityPosition;
 
 
     @FXML
-    private TableView<PropertyInsurance> propertyView;
+    private TableView<CarInsurancePolicy> propertyView;
     @FXML
-    private TableColumn<PropertyInsurance, Integer> propertyPolicyId;
+    private TableColumn<CarInsurancePolicy, Integer> propertyPolicyId;
     @FXML
-    private TableColumn<PropertyInsurance, Integer> propertyFirstName;
+    private TableColumn<CarInsurancePolicy, Integer> propertyFirstName;
     @FXML
-    private TableColumn<PropertyInsurance, String> propertyLastName;
+    private TableColumn<CarInsurancePolicy, String> propertyLastName;
     @FXML
-    private TableColumn<PropertyInsurance, String> propertyCarBrand;
+    private TableColumn<CarInsurancePolicy, String> propertyCarBrand;
     @FXML
-    private TableColumn<PropertyInsurance, String> propertyCarModel;
+    private TableColumn<CarInsurancePolicy, String> propertyCarModel;
     @FXML
-    private TableColumn<PropertyInsurance, String> propertyLicensePlate;
+    private TableColumn<CarInsurancePolicy, String> propertyLicensePlate;
 
-    private ObservableList<PersonalInsurance> personalList;
-    private ObservableList<ProfessionalActivityInsurance> liabilityList;
-    private ObservableList<PropertyInsurance> propertyList;
+    private ObservableList<LifeInsurancePolicy> personalList;
+    private ObservableList<ProfessionalActivityInsurancePolicy> liabilityList;
+    private ObservableList<CarInsurancePolicy> propertyList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

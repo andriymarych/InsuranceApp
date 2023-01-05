@@ -4,24 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/personal/LifeInsurancePolicy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/property/CarInsurancePolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/ObservableInsurancePolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/ObservableInsurancePolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/liability/LiabilityInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/liability/LiabilityInsurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/liability/ProfessionalActivityInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/liability/ProfessionalActivityInsurancePolicy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/personal/PersonalInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/personal/PersonalInsurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/property/PropertyInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/document/policy/policyType/property/PropertyInsurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/UserSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ComparisonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ComparisonController.java" afterDir="false" />
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Added new Policy Hierarchy&#10;&#10;Refactoring">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/document/policy/policyType/liability/LiabilityInsurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/document/policy/policyType/liability/LiabilityInsurance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/document/policy/policyType/liability/ProfessionalActivityInsurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/document/policy/policyType/liability/ProfessionalActivityInsurance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/UserSession.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,12 +135,31 @@
       <workItem from="1672935154916" duration="132000" />
       <workItem from="1672935820460" duration="240000" />
       <workItem from="1672936063684" duration="27000" />
-      <workItem from="1672936093610" duration="3738000" />
+      <workItem from="1672936093610" duration="3936000" />
     </task>
+    <task id="LOCAL-00001" summary="Added new Policy Hierarchy&#10;&#10;Refactoring">
+      <created>1672943902405</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1672943902405</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -168,6 +171,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new Policy Hierarchy&#10;&#10;Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new Policy Hierarchy&#10;&#10;Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
