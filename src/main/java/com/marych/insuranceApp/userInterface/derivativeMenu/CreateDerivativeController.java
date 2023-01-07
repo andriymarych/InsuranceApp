@@ -58,15 +58,15 @@ public class CreateDerivativeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         insuranceSpecialists.getItems().addAll(CompanyInfoService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
-        policyId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("policyId"));
-        compulsory.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Boolean>("compulsory"));
-        insuredId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("holderId"));
-        insurerId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("insurerId"));
-        companyId.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Integer>("companyId"));
-        insuredSum.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Double>("insuredSum"));
-        insuredPayment.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Double>("insuredPayment"));
-        signDate.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, String>("signDate"));
-        infoType.setCellValueFactory(new PropertyValueFactory<ObservableInsurancePolicy, Short>("infoType"));
+        policyId.setCellValueFactory(new PropertyValueFactory<>("policyId"));
+        compulsory.setCellValueFactory(new PropertyValueFactory<>("compulsory"));
+        insuredId.setCellValueFactory(new PropertyValueFactory<>("holderId"));
+        insurerId.setCellValueFactory(new PropertyValueFactory<>("insurerId"));
+        companyId.setCellValueFactory(new PropertyValueFactory<>("companyId"));
+        insuredSum.setCellValueFactory(new PropertyValueFactory<>("insuredSum"));
+        insuredPayment.setCellValueFactory(new PropertyValueFactory<>("insuredPayment"));
+        signDate.setCellValueFactory(new PropertyValueFactory<>("signDate"));
+        infoType.setCellValueFactory(new PropertyValueFactory<>("infoType"));
         policyList = DatabaseHandler.getInstance().getInsurancePolicyData(UserSession.getInstance().getUserId());
         tableView.setItems(policyList);
     }

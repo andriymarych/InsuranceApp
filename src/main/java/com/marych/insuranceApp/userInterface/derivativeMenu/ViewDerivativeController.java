@@ -1,10 +1,12 @@
 package com.marych.insuranceApp.userInterface.derivativeMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
+import com.marych.insuranceApp.dao.documentDao.derivative.DerivativeDao;
 import com.marych.insuranceApp.service.WindowLoader;
 import com.marych.insuranceApp.user.UserSession;
 import com.marych.insuranceApp.document.derivative.Derivative;
 import com.marych.insuranceApp.document.policy.PolicyNode;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +16,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -40,11 +43,12 @@ public class ViewDerivativeController implements Initializable {
     @FXML
     private TextField derivativeNoField;
 
-    private ObservableList<Derivative> derivativeList;
+    private ObservableList<Derivative> derivativeObservableListList  = FXCollections.observableArrayList();
     private ObservableList<PolicyNode> policyList;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        DerivativeDao derivativeDao = new DerivativeDao();
         policyViewId.setCellValueFactory(new PropertyValueFactory<>("policyId"));
         derivativeId.setCellValueFactory(new PropertyValueFactory<>("derivativeId"));
         insuredId.setCellValueFactory(new PropertyValueFactory<>("holderId"));
@@ -52,8 +56,9 @@ public class ViewDerivativeController implements Initializable {
         companyId.setCellValueFactory(new PropertyValueFactory<>("companyId"));
         derivativePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         signDate.setCellValueFactory(new PropertyValueFactory<>("signDate"));
-        derivativeList = DatabaseHandler.getInstance().getDerivativeData(UserSession.getInstance().getUserId());
-        tableView.setItems(derivativeList);
+        ArrayList<Derivative> derivativeList = (ArrayList<Derivative>) derivativeDao.getAll(UserSession.getInstance().getUserId());
+        derivativeObservableListList.addAll(derivativeList);
+        tableView.setItems(derivativeObservableListList);
     }
 
     @FXML

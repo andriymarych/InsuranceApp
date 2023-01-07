@@ -1,6 +1,5 @@
 package com.marych.insuranceApp.dao;
 
-
 import com.marych.insuranceApp.document.derivative.Derivative;
 import com.marych.insuranceApp.document.policy.ObservableInsurancePolicy;
 import com.marych.insuranceApp.document.policy.PolicyNode;
@@ -11,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseHandler {
     private static DatabaseHandler handler;
@@ -67,7 +67,9 @@ public class DatabaseHandler {
     }
 
     public ObservableList<ObservableInsurancePolicy> getInsurancePolicyData(int userId) {
+        ArrayList<ObservableInsurancePolicy> arrayList = new ArrayList<>();
         ObservableList<ObservableInsurancePolicy> observableInsurancePolicyList = FXCollections.observableArrayList();
+        observableInsurancePolicyList.addAll(arrayList);
         String SQL = "SELECT * FROM \"insurance_policy\" WHERE holder_id = " + userId + "ORDER BY policy_id";
         ResultSet resultSet = execQuery(SQL);
         try {
@@ -276,5 +278,6 @@ public class DatabaseHandler {
         }
         return carInsurancePolicyList;
     }
+
 }
 
