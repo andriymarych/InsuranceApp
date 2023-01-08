@@ -7,14 +7,14 @@ public class InsurancePolicyDaoSender {
     private boolean compulsory;
     private int holderId;
     private int insurerId;
-    private String companyId;
+    private int companyId;
     private double insuredSum;
     private double insuredPayment;
     private int riskPercentage;
     private int infoType;
     private String date;
 
-    public InsurancePolicyDaoSender(int policyId, int holderId, int insurerId, String companyId) {
+    public InsurancePolicyDaoSender(int policyId, int holderId, int insurerId, int companyId) {
         this.policyId = policyId;
         this.holderId = holderId;
         this.insurerId = insurerId;

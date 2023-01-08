@@ -1,7 +1,7 @@
 package com.marych.insuranceApp.service.info;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.user.InsuranceSpecialist;
+import com.marych.insuranceApp.user.userRole.InsuranceSpecialist;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,6 +26,7 @@ public class CompanyInfoService {
         }
         return insuranceSpecialists;
     }
+
     public static InsuranceSpecialist getInsuranceSpecialist(int userId) {
         String query = "SELECT * " +
                 "FROM insurance_specialist " +
@@ -33,14 +34,15 @@ public class CompanyInfoService {
         ResultSet resultSet = DatabaseHandler.getInstance().execQuery(query);
         try {
             if (resultSet.next()) {
-                return new InsuranceSpecialist(userId,resultSet.getString("first_name"),
-                        resultSet.getString("last_name"))
-                        .setCompanyId(resultSet.getString("insurance_company_id"))
+                return new InsuranceSpecialist(userId)
+                        .setFirstName(resultSet.getString("first_name"))
+                        .setLastName(resultSet.getString("last_name"))
+                        .setCompanyId(resultSet.getInt("insurance_company_id"))
                         .setEmail(resultSet.getString("email"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-       return null;
+        return null;
     }
 }

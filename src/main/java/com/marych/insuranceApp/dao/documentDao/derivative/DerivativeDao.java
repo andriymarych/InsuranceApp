@@ -41,16 +41,15 @@ public class DerivativeDao implements Dao <Derivative> {
         return Optional.empty();
     }
 
-    @Override
     public List<Derivative> getAll(int holderId) {
         Connection connection ;
         PreparedStatement statement ;
         ResultSet resultSet ;
-        String SqlStatement = "SELECT * FROM \"derivative\" WHERE holder_id = ? ORDER BY derivative_id";
+        String query = "SELECT * FROM \"derivative\" WHERE holder_id = ? ORDER BY derivative_id";
         ArrayList<Derivative> derivativeList = new ArrayList<>();
         try {
             connection = ConnectionPool.getConnection();
-            statement = connection.prepareStatement(SqlStatement);
+            statement = connection.prepareStatement(query);
             statement.setInt(1, holderId);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {

@@ -1,22 +1,13 @@
 package com.marych.insuranceApp.userInterface.loginMenu;
 
-import com.marych.insuranceApp.dao.DatabaseHandler;
+import com.marych.insuranceApp.dao.userDao.UserDao;
+import com.marych.insuranceApp.service.WindowLoader;
 import com.marych.insuranceApp.service.info.AppData;
-import com.marych.insuranceApp.service.diia.DiiaCopy;
-import com.marych.insuranceApp.service.info.UserInfoService;
 import com.marych.insuranceApp.service.validation.EmailValidation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-
-import java.io.IOException;
 import java.util.Objects;
 
 public class SignUpController {
@@ -33,54 +24,35 @@ public class SignUpController {
 
     @FXML
     private void signUpButton(ActionEvent event) {
-        UserInfoService infoService = new UserInfoService();
+        UserDao userDao = UserDao.getInstance();
         String login = loginField.getText();
-        if (!infoService.checkLogin(login)) {
+        if (!userDao.checkLogin(login)) {
             errorLabel.setText("Користувач із таким логіном уже існує");
         } else if (passwordField.getText().equals("")) {
             errorLabel.setText("Введіть пароль");
         } else if (!EmailValidation.validate(emailField.getText())) {
             errorLabel.setText("Ви ввели невірний email");
         } else {
-            addUserData();
-            loadWindow(event,"../mainMenu/MainScene.fxml");
+            addUser();
+            WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("../mainMenu/MainScene.fxml")));
         }
     }
+
     @FXML
-    private void returnButton(ActionEvent event){
-        loadWindow(event,"../loginMenu/DiiaSignUpScene.fxml");
+    private void returnButton(ActionEvent event) {
+        WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("../loginMenu/DiiaSignUpScene.fxml")));
     }
 
-    private void addUserData() {
-        UserInfoService infoService = new UserInfoService();
-        int userId = infoService.getNextUserId();
+    private void addUser() {
+        UserDao userDao = UserDao.getInstance();
+        addUserSessionData();
         int diiaId = Integer.parseInt(AppData.getInstance().get("diiaId"));
-        DiiaCopy diiaCopy = new DiiaCopy(diiaId);
-        String query = "INSERT INTO \"user\" " + " VALUES (" +
-                userId + ", '" +
-                loginField.getText() + "','" +
-                passwordField.getText() + "', " + 1 + ")";
-        DatabaseHandler.getInstance().execUpdate(query);
-        query = "INSERT INTO \"customer\" " + " VALUES (" +
-                userId + ", '" +
-                diiaCopy.getFirstName() + "','" +
-                diiaCopy.getLastName() + "', '" +
-                diiaCopy.getBirthDate() + "', " +
-                diiaCopy.getITN() + ", '" +
-                emailField.getText() + "')";
-        DatabaseHandler.getInstance().execUpdate(query);
+        userDao.addUser(diiaId);
     }
-
-    private void loadWindow(ActionEvent event,String name) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource(name)));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void addUserSessionData(){
+        AppData.getInstance().put("login",loginField.getText());
+        AppData.getInstance().put("password",passwordField.getText());
+        AppData.getInstance().put("login",emailField.getText());
+        AppData.getInstance().put("userRole","customer");
     }
 }

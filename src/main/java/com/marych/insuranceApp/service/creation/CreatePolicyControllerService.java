@@ -45,7 +45,7 @@ public abstract class CreatePolicyControllerService implements Initializable {
         policyId = PolicyInfo.getInstance().getNextPolicyId();
         int holderId = UserSession.getInstance().getUserId();
         int insurerId = Integer.parseInt(insuranceSpecialists.getValue().split(" ")[0]);
-        String companyId = Objects.requireNonNull(CompanyInfoService.getInsuranceSpecialist(insurerId)).getCompanyId();
+        int companyId = Objects.requireNonNull(CompanyInfoService.getInsuranceSpecialist(insurerId)).getCompanyId();
         boolean compulsory = checkBox.isSelected();
         int insuredSum = Integer.parseInt(insuranceSumField.getText());
         short riskPercentage = Short.parseShort(riskPercentageField.getText());

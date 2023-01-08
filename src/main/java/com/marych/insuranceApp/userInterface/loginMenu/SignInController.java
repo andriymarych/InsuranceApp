@@ -22,7 +22,7 @@ public class SignInController {
     private void signInButton(ActionEvent event)  {
         String login = usernameField.getText();
         String enteredPassword = passwordField.getText();
-        UserDao userDao = new UserDao();
+        UserDao userDao = UserDao.getInstance();
         String actualPassword = userDao.validateUser(login);
         if (actualPassword == null) {
             errorLabel.setText("Користувача із логіном " + login + " не існує");

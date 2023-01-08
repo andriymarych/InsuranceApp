@@ -8,7 +8,5 @@ public interface Dao<T> {
 
     Optional<T> get(int id);
 
-    List<T> getAll(int holderId);
-
 }
 
