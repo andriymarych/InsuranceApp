@@ -46,8 +46,7 @@ public class SignUpController {
     private void addUser() {
         UserDao userDao = UserDao.getInstance();
         addUserSessionData();
-        int diiaId = Integer.parseInt(AppData.getInstance().get("diiaId"));
-        userDao.addUser(diiaId);
+        userDao.addUser();
     }
     private void addUserSessionData(){
         AppData.getInstance().put("login",loginField.getText());

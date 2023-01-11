@@ -1,6 +1,5 @@
 package com.marych.insuranceApp.dao;
 
-import com.marych.insuranceApp.document.derivative.Derivative;
 import com.marych.insuranceApp.document.policy.ObservableInsurancePolicy;
 import com.marych.insuranceApp.document.policy.PolicyNode;
 import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurancePolicy;
@@ -9,8 +8,13 @@ import com.marych.insuranceApp.document.policy.policyType.property.CarInsuranceP
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class DatabaseHandler {
     private static DatabaseHandler handler;
@@ -28,10 +32,13 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/InsuranceDB",
-                    "postgres",
-                    "9109096682qaz");
-        } catch (SQLException e) {
+            InputStream input = new FileInputStream("src/main/resources/dbconfig.properties");
+            Properties properties = new Properties();
+            properties.load(input);
+            connection = DriverManager.getConnection(properties.getProperty("db.url"),
+                    properties.getProperty("db.username"),
+                    properties.getProperty("db.password"));
+        } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -93,29 +100,6 @@ public class DatabaseHandler {
         }
         return observableInsurancePolicyList;
     }
-
-    public ObservableList<Derivative> getDerivativeData(int userId) {
-        ObservableList<Derivative> derivativeList = FXCollections.observableArrayList();
-        String SQL = "SELECT * FROM \"derivative\" WHERE holder_id = " + userId + " ORDER BY derivative_id";
-        ResultSet resultSet = execQuery(SQL);
-        try {
-            while (resultSet.next()) {
-                Derivative derivative = new Derivative(
-                        resultSet.getInt("derivative_id"),
-                        resultSet.getInt("holder_id"),
-                        resultSet.getInt("insurer_id"),
-                        resultSet.getInt("company_id")
-                );
-                derivative.setPrice(resultSet.getDouble("price"))
-                        .setSignDate(resultSet.getDate("sign_date").toString());
-                derivativeList.add(derivative);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return derivativeList;
-    }
-
     public ObservableList<ObservableInsurancePolicy> getInsurancePolicyDataByPrice(String derivativeId, String startSum, String endSum) {
         ObservableList<ObservableInsurancePolicy> observableInsurancePolicyList = FXCollections.observableArrayList();
         String SQL = "SELECT  insurance_policy.policy_id, compulsory,holder_id,insurer_id," +

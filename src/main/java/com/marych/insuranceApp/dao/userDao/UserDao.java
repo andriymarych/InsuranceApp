@@ -84,29 +84,33 @@ public class UserDao implements Dao<User> {
         return null;
     }
 
-    public boolean addUser(int diiaId) {
+    public boolean addUser() {
         Connection connection;
         PreparedStatement statement;
         String query = "INSERT INTO \"user\"  VALUES ( ?, ?, ?, ?)";
         int userId = getNextUserId();
-        DiiaCopy diiaCopy = new DiiaCopy(diiaId);
+        int diiaId = Integer.parseInt(AppData.getInstance().get("diiaId"));
+        DiiaCopy userDiiaCopy = new DiiaCopy(diiaId);
         try {
             connection = ConnectionPool.getConnection();
             statement = connection.prepareStatement(query);
             statement.setInt(1, userId);
             statement.setString(2, AppData.getInstance().get("login"));
             statement.setString(3, AppData.getInstance().get("password"));
-            statement.setString(4, diiaCopy.getBirthDate());
+            statement.setString(4, userDiiaCopy.getBirthDate());
             statement.executeUpdate();
-            String userRole = AppData.getInstance().get("userRole");
-            UserRoleDao userRoleDao = UserDaoFactory.getUserDao(userRole);
-            userRoleDao.addUserRole(userId,diiaCopy);
+            addUserRoleSpecificDao(userId,userDiiaCopy);
             UserSession.createInstance(userId, AppData.getInstance().get("login"));
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
+    }
+    private void addUserRoleSpecificDao(int userId, DiiaCopy userDiiaCopy){
+        String userRole = AppData.getInstance().get("userRole");
+        UserRoleDao userRoleDao = UserDaoFactory.getUserDao(userRole);
+        userRoleDao.addUserRole(userId,userDiiaCopy);
     }
 
 }

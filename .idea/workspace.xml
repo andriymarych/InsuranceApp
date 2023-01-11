@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Refactoring SingUpController, Add UserRoles, UserDaoFactory" />
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +32,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -136,7 +147,7 @@
       <workItem from="1672936063684" duration="27000" />
       <workItem from="1672936093610" duration="3936000" />
       <workItem from="1673356560286" duration="8576000" />
-      <workItem from="1673382759732" duration="1294000" />
+      <workItem from="1673382759732" duration="6564000" />
     </task>
     <task id="LOCAL-00001" summary="Added new Policy Hierarchy&#10;&#10;Refactoring">
       <created>1672943902405</created>
@@ -201,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673384052731</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory">
+      <created>1673384177181</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673384177181</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,9 +270,9 @@
     <MESSAGE value="Add info Services" />
     <MESSAGE value="Some code refactoring, added connection database pool" />
     <MESSAGE value="Refactoring SignInController, Add .gitignore" />
-    <MESSAGE value="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory" />
     <MESSAGE value="Refactoring SingUpController, Add UserRoles, UserDaoFactory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring SingUpController, Add UserRoles, UserDaoFactory" />
+    <MESSAGE value="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -298,9 +316,9 @@
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="88" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
