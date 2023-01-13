@@ -5,7 +5,7 @@ import com.marych.insuranceApp.service.WindowLoader;
 import com.marych.insuranceApp.service.info.CompanyInfoService;
 import com.marych.insuranceApp.service.info.document.derivative.DerivativeInfo;
 import com.marych.insuranceApp.service.info.document.policy.PolicyInfo;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.document.policy.ObservableInsurancePolicy;
 import javafx.collections.ObservableList;

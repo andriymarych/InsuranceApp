@@ -6,6 +6,7 @@ import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.user.userRole.Customer;
 import com.marych.insuranceApp.user.User;
+import com.marych.insuranceApp.user.userRole.UserRole;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,7 +41,7 @@ public class CustomerDao extends UserRoleDao implements Dao<Customer> {
                 String ITN = resultSet.getString("ITN");
                 String email = resultSet.getString("email");
                 Customer customer = new Customer(user_id);
-                customer.setUserRole(User.UserRole.CUSTOMER)
+                customer.setUserRole(UserRole.CUSTOMER)
                         .setFirstName(firstName)
                         .setLastName(lastName)
                         .setBirthDate(birthDate)

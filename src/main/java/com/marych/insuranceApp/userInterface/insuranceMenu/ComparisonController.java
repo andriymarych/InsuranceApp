@@ -1,7 +1,8 @@
 package com.marych.insuranceApp.userInterface.insuranceMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurancePolicy;
 import javafx.collections.ObservableList;
@@ -52,18 +53,7 @@ public class ComparisonController implements Initializable {
     }
     @FXML
     private void returnButton(ActionEvent event) {
-        loadWindow(event, "../insuranceMenu/ViewPolicyScene.fxml");
+        WindowLoader.load(event,Objects.requireNonNull(getClass().getResource("../insuranceMenu/ViewPolicyScene.fxml")));
     }
-    private void loadWindow(ActionEvent event, String name) {
-        try {
-            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource(name)));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

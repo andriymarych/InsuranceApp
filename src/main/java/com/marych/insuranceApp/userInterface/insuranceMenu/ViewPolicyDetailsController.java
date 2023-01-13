@@ -1,7 +1,7 @@
 package com.marych.insuranceApp.userInterface.insuranceMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.document.policy.policyType.liability.ProfessionalActivityInsurancePolicy;
 import com.marych.insuranceApp.document.policy.policyType.personal.LifeInsurancePolicy;
 import com.marych.insuranceApp.document.policy.policyType.property.CarInsurancePolicy;

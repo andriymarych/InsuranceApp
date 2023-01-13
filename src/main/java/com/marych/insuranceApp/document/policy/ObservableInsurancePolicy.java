@@ -42,6 +42,26 @@ public class ObservableInsurancePolicy {
         return holderId;
     }
 
+    public int getInsurerId() {
+        return insurerId;
+    }
+
+    public double getInsuredSum() {
+        return insuredSum;
+    }
+
+    public double getInsuredPayment() {
+        return insuredPayment;
+    }
+
+    public short getRiskPercentage() {
+        return riskPercentage;
+    }
+
+    public short getInfoType() {
+        return infoType;
+    }
+
     public ObservableInsurancePolicy setHolderId(int holderId) {
         this.holderId = holderId;
         return this;

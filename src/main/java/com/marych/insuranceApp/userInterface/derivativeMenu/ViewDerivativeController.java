@@ -3,7 +3,7 @@ package com.marych.insuranceApp.userInterface.derivativeMenu;
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.dao.documentDao.derivative.DerivativeDao;
 import com.marych.insuranceApp.service.WindowLoader;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.document.derivative.Derivative;
 import com.marych.insuranceApp.document.policy.PolicyNode;
 import javafx.collections.FXCollections;

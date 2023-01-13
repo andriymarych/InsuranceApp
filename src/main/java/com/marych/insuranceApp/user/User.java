@@ -1,10 +1,9 @@
 package com.marych.insuranceApp.user;
 
+import com.marych.insuranceApp.user.userRole.UserRole;
+
 public abstract class User {
-    public enum UserRole{
-        CUSTOMER,
-        INSURANCE_SPECIALIST
-    }
+
 
     private int userId;
     private UserRole userRole;

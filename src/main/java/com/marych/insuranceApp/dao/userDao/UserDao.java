@@ -7,7 +7,9 @@ import com.marych.insuranceApp.dao.userDao.rolesDao.UserRoleDao;
 import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.user.User;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSessionCreator;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -75,7 +77,7 @@ public class UserDao implements Dao<User> {
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 int userId = resultSet.getInt("id");
-                UserSession.createInstance(userId, login);
+                UserSessionCreator.create(userId);
                 return resultSet.getString("password");
             }
         } catch (SQLException e) {
@@ -100,7 +102,7 @@ public class UserDao implements Dao<User> {
             statement.setString(4, userDiiaCopy.getBirthDate());
             statement.executeUpdate();
             addUserRoleSpecificDao(userId,userDiiaCopy);
-            UserSession.createInstance(userId, AppData.getInstance().get("login"));
+            UserSessionCreator.create(userId);
             return true;
         } catch (SQLException e) {
             e.printStackTrace();

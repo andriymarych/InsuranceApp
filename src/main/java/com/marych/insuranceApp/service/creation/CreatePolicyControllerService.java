@@ -1,11 +1,10 @@
 package com.marych.insuranceApp.service.creation;
 
-import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.service.info.CompanyInfoService;
 import com.marych.insuranceApp.service.WindowLoader;
 import com.marych.insuranceApp.service.info.document.policy.PolicyInfo;
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insurancePolicies.InsurancePolicyDaoSender;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

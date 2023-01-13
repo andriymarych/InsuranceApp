@@ -1,6 +1,6 @@
 package com.marych.insuranceApp.userInterface.main;
 
-import com.marych.insuranceApp.user.UserSession;
+import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.service.info.AppLogger;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
