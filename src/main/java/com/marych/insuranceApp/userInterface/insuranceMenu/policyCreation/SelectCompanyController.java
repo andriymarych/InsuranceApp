@@ -75,14 +75,8 @@ public class SelectCompanyController implements Initializable {
         String nextWindow  = AppData.getInstance().get("nextWindow");
         if(nextWindow.equals("Policy")) {
             String policyType = AppData.getInstance().get("policyType");
-            switch (policyType) {
-                case "Особисте":
-                    loadWindow(event, "../policyCreation/insurancePolicies/CreatePersonalPolicyScene.fxml");
-                case "Майно":
-                    loadWindow(event, "../policyCreation/insurancePolicies/CreatePropertyPolicyScene.fxml");
-                case "Відповідальність":
-                    loadWindow(event, "../policyCreation/insurancePolicies/CreateLiabilityPolicyScene.fxml");
-            }
+            PolicyCreationWindowLoader windowLoader = new PolicyCreationWindowLoader(event);
+            windowLoader.load(policyType);
         } else if(nextWindow.equals("Derivative")){
             loadWindow(event, "/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeScene.fxml");
         }

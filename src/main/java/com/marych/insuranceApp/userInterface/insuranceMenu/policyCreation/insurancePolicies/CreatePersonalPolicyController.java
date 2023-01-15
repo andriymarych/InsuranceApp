@@ -3,7 +3,7 @@ package com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insur
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.service.creation.CreatePolicyControllerService;
-import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,10 +27,12 @@ public class CreatePersonalPolicyController extends CreatePolicyControllerServic
     private void createPolicy(ActionEvent event) {
         createInsurancePolicy();
         addPolicyInfo();
-        WindowLoader.load(event,Objects.requireNonNull(getClass().getResource("../SuccessPolicyCreationScene.fxml")));
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("../SuccessPolicyCreationScene.fxml")));
     }
-    private void addPolicyInfo(){
-        String query  =  "INSERT INTO \"personal_info\" " + " VALUES (" +
+
+    private void addPolicyInfo() {
+        String query = "INSERT INTO \"personal_info\" " + " VALUES (" +
                 getPolicyId() + ", '" +
                 firstNameField.getText() + "', '" +
                 lastNameField.getText() + "', '" +

@@ -1,4 +1,4 @@
-package com.marych.insuranceApp.service;
+package com.marych.insuranceApp.service.loader;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,13 @@ import java.net.URL;
 import java.util.Objects;
 
 public class WindowLoader {
-    public static void load(ActionEvent event, URL url) {
+    private ActionEvent event;
+
+    public WindowLoader(ActionEvent event) {
+        this.event = event;
+    }
+
+    public void load(URL url) {
         try {
             FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(url));
             Parent root = loader.load();

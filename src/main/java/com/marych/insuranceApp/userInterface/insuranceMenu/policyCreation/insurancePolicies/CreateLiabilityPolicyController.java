@@ -2,7 +2,7 @@ package com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insur
 
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import com.marych.insuranceApp.service.creation.CreatePolicyControllerService;
 import com.marych.insuranceApp.service.info.CompanyInfoService;
 import com.marych.insuranceApp.service.info.AppData;
@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -41,15 +42,17 @@ public class CreateLiabilityPolicyController extends CreatePolicyControllerServi
     public void initialize(URL url, ResourceBundle resourceBundle) {
         insuranceSpecialists.getItems().addAll(CompanyInfoService.getInsuranceSpecialists(AppData.getInstance().get("insuranceCompany")));
     }
+
     @FXML
     private void createPolicy(ActionEvent event) {
         createInsurancePolicy();
         addPolicyInfo();
-        WindowLoader.load(event,Objects.requireNonNull(getClass().getResource("../SuccessPolicyCreationScene.fxml")));
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("../SuccessPolicyCreationScene.fxml")));
     }
 
-    private void addPolicyInfo(){
-        String query  =  "INSERT INTO \"liability_info\" " + " VALUES (" +
+    private void addPolicyInfo() {
+        String query = "INSERT INTO \"liability_info\" " + " VALUES (" +
                 getPolicyId() + ", '" +
                 firstNameField.getText() + "', '" +
                 lastNameField.getText() + "', '" +

@@ -1,11 +1,10 @@
-package com.marych.insuranceApp.dao.userDao.rolesDao;
+package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
 import com.marych.insuranceApp.dao.ConnectionPool;
 import com.marych.insuranceApp.dao.Dao;
 import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.user.userRole.Customer;
-import com.marych.insuranceApp.user.User;
 import com.marych.insuranceApp.user.userRole.UserRole;
 
 import java.sql.Connection;

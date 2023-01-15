@@ -2,7 +2,7 @@ package com.marych.insuranceApp.userInterface.derivativeMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
 import com.marych.insuranceApp.document.policy.ObservableInsurancePolicy;
-import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
@@ -63,14 +64,17 @@ public class FilterDerivativeController implements Initializable {
         infoType.setCellValueFactory(new PropertyValueFactory<>("infoType"));
 
     }
+
     @FXML
     private void returnButton(ActionEvent event) {
-        WindowLoader.load(event,Objects.requireNonNull(getClass().getResource("../derivativeMenu/ViewDerivativeMenuScene.fxml")));
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("../derivativeMenu/ViewDerivativeMenuScene.fxml")));
     }
+
     @FXML
     private void filterButton(ActionEvent event) {
         policyList = DatabaseHandler.getInstance().
-                getInsurancePolicyDataByPrice(derivativeNoField.getText(),startSumField.getText(),endSumField.getText());
+                getInsurancePolicyDataByPrice(derivativeNoField.getText(), startSumField.getText(), endSumField.getText());
         tableView.setItems(policyList);
     }
 

@@ -39,7 +39,7 @@ public class  UserSession {
         return userRole;
     }
 
-    public static int getLoginAttemptsNumber() {
-        return loginAttemptsNumber;
+    public static boolean isExceededLoginAttemptsNumber() {
+        return loginAttemptsNumber == 3;
     }
 }

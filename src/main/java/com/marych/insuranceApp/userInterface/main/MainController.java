@@ -1,5 +1,6 @@
 package com.marych.insuranceApp.userInterface.main;
 
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.service.info.AppLogger;
 import javafx.animation.Animation;
@@ -7,11 +8,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -20,7 +17,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -51,37 +47,29 @@ public class MainController implements Initializable {
         clock.setCycleCount(Animation.INDEFINITE);
         clock.play();
     }
+
     @FXML
-    private void InsurancePolicyMenuButton(ActionEvent event){
-        loadWindow(event,"../insuranceMenu/PolicyMenuScene.fxml");
+    private void InsurancePolicyMenuButton(ActionEvent event) {
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("../insuranceMenu/PolicyMenuScene.fxml")));
     }
+
     @FXML
     private void DerivativeMenuButton(ActionEvent event) {
-        loadWindow(event,"../derivativeMenu/DerivativeMenuScene.fxml");
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("../derivativeMenu/DerivativeMenuScene.fxml")));
     }
+
     @FXML
     private void ExitButton(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Вихід");
         alert.setHeaderText("Схоже на те, що ви хочете вийти");
         alert.setContentText("Ви дійсно бажаєте вийти?");
-        if(alert.showAndWait().get() == ButtonType.OK){
-            AppLogger.info("User "+ UserSession.getInstance().getLogin()+ "(id"+ UserSession.getInstance().getUserId() + ") is logged out");
+        if (alert.showAndWait().get() == ButtonType.OK) {
+            AppLogger.info("User " + UserSession.getInstance().getLogin() + "(id" + UserSession.getInstance().getUserId() + ") is logged out");
             Stage stage = (Stage) exitButton.getScene().getWindow();
             stage.close();
-        }
-    }
-
-    private void loadWindow(ActionEvent event,String name){
-        try {
-            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource(name)));
-            Parent root = loader.load();
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }catch(IOException e){
-            e.printStackTrace();
         }
     }
 }

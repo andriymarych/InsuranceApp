@@ -1,7 +1,7 @@
 package com.marych.insuranceApp.userInterface.derivativeMenu;
 
 import com.marych.insuranceApp.dao.DatabaseHandler;
-import com.marych.insuranceApp.service.WindowLoader;
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import com.marych.insuranceApp.service.info.CompanyInfoService;
 import com.marych.insuranceApp.service.info.document.derivative.DerivativeInfo;
 import com.marych.insuranceApp.service.info.document.policy.PolicyInfo;
@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -73,7 +74,8 @@ public class CreateDerivativeController implements Initializable {
 
     @FXML
     private void returnButton(ActionEvent event) {
-        WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/SelectCompanyScene.fxml")));
+        WindowLoader windowLoader = new WindowLoader(event);
+        windowLoader.load(Objects.requireNonNull(getClass().getResource("/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/SelectCompanyScene.fxml")));
     }
 
     @FXML
@@ -82,12 +84,13 @@ public class CreateDerivativeController implements Initializable {
             derivativeId = DerivativeInfo.getInstance().getNextDerivativeId();
             addDerivative();
             addPolicyList();
-            WindowLoader.load(event, Objects.requireNonNull(getClass().getResource("../derivativeMenu/SuccessDerivativeCreationScene.fxml")));
+            WindowLoader windowLoader = new WindowLoader(event);
+            windowLoader.load(Objects.requireNonNull(getClass().getResource("../derivativeMenu/SuccessDerivativeCreationScene.fxml")));
         }
     }
 
     private void addDerivative() {
-        double price = selectPrice()*1.02;
+        double price = selectPrice() * 1.02;
         int userId = UserSession.getInstance().getUserId();
         String query = "INSERT INTO \"derivative\" " + " VALUES (" +
                 derivativeId + ", " +
@@ -137,7 +140,7 @@ public class CreateDerivativeController implements Initializable {
         int policyNo;
         policyNoArray = policyNoField.getText().split(" ");
         for (String s : policyNoArray) {
-            if(policyNoArray.length < 2){
+            if (policyNoArray.length < 2) {
                 errorLabel.setText("Введіть мінімум 2 страхових договори для формування деривативу");
             }
             policyNo = Integer.parseInt(s);

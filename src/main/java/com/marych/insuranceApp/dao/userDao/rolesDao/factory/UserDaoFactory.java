@@ -1,7 +1,5 @@
-package com.marych.insuranceApp.dao.userDao.rolesDao;
+package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
-
-import com.marych.insuranceApp.dao.Dao;
 
 public class UserDaoFactory {
     public static UserRoleDao getUserDao(String userRole){

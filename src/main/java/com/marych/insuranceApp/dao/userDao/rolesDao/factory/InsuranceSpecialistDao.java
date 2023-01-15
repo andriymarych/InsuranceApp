@@ -1,4 +1,4 @@
-package com.marych.insuranceApp.dao.userDao.rolesDao;
+package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
 import com.marych.insuranceApp.dao.ConnectionPool;
 import com.marych.insuranceApp.dao.Dao;

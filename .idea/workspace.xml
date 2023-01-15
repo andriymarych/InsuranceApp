@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Add UserDaoValidator,Refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DatabaseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSessionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSessionCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/service/WindowLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/service/creation/CreatePolicyControllerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/service/creation/CreatePolicyControllerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSessionCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSessionCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/DerivativeMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/DerivativeMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/FilterDerivativeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/FilterDerivativeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/SuccessDerivativeCreationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/SuccessDerivativeCreationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/ComparisonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/ComparisonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/PolicyCreationWindowLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/PolicyCreationWindowLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreateLiabilityPolicyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreateLiabilityPolicyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePersonalPolicyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePersonalPolicyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePropertyPolicyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePropertyPolicyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignInController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/main/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/main/MainController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +99,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/com/marych/insuranceApp/userInterface/loginMenu/mainMenu" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.marych.insuranceApp.dao.userDao.rolesDao" />
       <recent name="com.marych.insuranceApp.userInterface.derivativeMenu" />
       <recent name="com.marych.insuranceApp.userInterface.insuranceMenu.policyCreation.insurancePolicies" />
       <recent name="com.marych.insuranceApp.userInterface.loginMenu" />
@@ -148,6 +164,10 @@
       <workItem from="1672936093610" duration="3936000" />
       <workItem from="1673356560286" duration="8576000" />
       <workItem from="1673382759732" duration="6564000" />
+      <workItem from="1673615516126" duration="3304000" />
+      <workItem from="1673701046341" duration="14000" />
+      <workItem from="1673701077005" duration="11000" />
+      <workItem from="1673701117103" duration="10600000" />
     </task>
     <task id="LOCAL-00001" summary="Added new Policy Hierarchy&#10;&#10;Refactoring">
       <created>1672943902405</created>
@@ -219,7 +239,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673384177181</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add UserRole enum system, Refactoring">
+      <created>1673615814424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673615814425</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add UserDaoValidator,Refactoring">
+      <created>1673822182700</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673822182700</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +286,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -272,53 +306,18 @@
     <MESSAGE value="Refactoring SignInController, Add .gitignore" />
     <MESSAGE value="Refactoring SingUpController, Add UserRoles, UserDaoFactory" />
     <MESSAGE value="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring SignInController SignUpController, Add UserRoles, UserDaoFactory" />
+    <MESSAGE value="Add UserRole enum system, Refactoring" />
+    <MESSAGE value="Add UserRoleDaoAppender, Refactoring" />
+    <MESSAGE value="Add UserDaoValidator,Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add UserDaoValidator,Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/main/MainController.java</url>
-          <line>62</line>
-          <properties class="com.marych.insuranceApp.userInterface.main.MainController" method="ExitButton">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/FilterDerivativeController.java</url>
-          <line>70</line>
-          <properties class="com.marych.insuranceApp.userInterface.derivativeMenu.FilterDerivativeController" method="filterButton">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/CreateDerivativeController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/ViewPolicyController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/insuranceMenu/policyCreation/insurancePolicies/CreatePersonalPolicyController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/derivativeMenu/ViewDerivativeController.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/ConnectionPool.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="93" />
+          <line>63</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

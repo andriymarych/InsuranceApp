@@ -1,4 +1,4 @@
-package com.marych.insuranceApp.dao.userDao.rolesDao;
+package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
 import com.marych.insuranceApp.service.diia.DiiaCopy;
 
