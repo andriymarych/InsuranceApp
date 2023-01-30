@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public class InsuranceSpecialistDao extends UserRoleDao implements Dao<InsuranceSpecialist> {
+public class InsuranceSpecialistDao implements UserRoleDao,Dao<InsuranceSpecialist> {
     private static InsuranceSpecialistDao insuranceSpecialistDao;
 
     public static InsuranceSpecialistDao getInstance() {

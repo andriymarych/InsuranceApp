@@ -1,22 +1,20 @@
 package com.marych.insuranceApp.dao.userDao;
 
 import com.marych.insuranceApp.dao.ConnectionPool;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.marych.insuranceApp.service.HashPasswordService;
 
-public class UserDaoValidator {
+import java.sql.*;
+
+public class UserValidator {
 
     public boolean isLoginExist(String login) {
         Connection connection;
-        PreparedStatement statement;
-        String query = "SELECT * FROM \"user\" WHERE login = ?";
+        Statement statement;
+        String query = "SELECT * FROM \"user\" WHERE login = '" + login + "'";
         try {
             connection = ConnectionPool.getConnection();
-            statement = connection.prepareStatement(query);
-            statement.setString(1, login);
-            ResultSet resultSet = statement.executeQuery();
+            statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
             if (resultSet.next()) {
                 return true;
             }
@@ -26,7 +24,13 @@ public class UserDaoValidator {
         return false;
     }
 
-    public String getUserPassword(String login) {
+    public Boolean validateUser(String login , String enteredPassword) {
+        String actualPassword = getUserPassword(login);
+        HashPasswordService hashPasswordService = new HashPasswordService();
+        assert actualPassword != null;
+        return hashPasswordService.validatePassword(enteredPassword,actualPassword);
+    }
+    private String getUserPassword(String login){
         Connection connection;
         PreparedStatement statement;
         String query = "SELECT * FROM \"user\" WHERE login = ? ";
@@ -42,5 +46,6 @@ public class UserDaoValidator {
             e.printStackTrace();
         }
         return null;
+
     }
 }

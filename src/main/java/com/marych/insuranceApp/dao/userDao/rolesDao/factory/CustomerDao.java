@@ -7,13 +7,10 @@ import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.user.userRole.Customer;
 import com.marych.insuranceApp.user.userRole.UserRole;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Optional;
 
-public class CustomerDao extends UserRoleDao implements Dao<Customer> {
+public class CustomerDao implements UserRoleDao,Dao<Customer> {
     private static CustomerDao customerDao;
 
     public static CustomerDao getInstance() {
@@ -64,7 +61,7 @@ public class CustomerDao extends UserRoleDao implements Dao<Customer> {
             statement.setInt(1, userId);
             statement.setString(2, diiaCopy.getFirstName());
             statement.setString(3, diiaCopy.getLastName());
-            statement.setString(4, diiaCopy.getBirthDate());
+            statement.setDate(4, Date.valueOf(diiaCopy.getBirthDate()));
             statement.setString(5, diiaCopy.getITN());
             statement.setString(6, AppData.getInstance().get("email"));
             statement.executeUpdate();

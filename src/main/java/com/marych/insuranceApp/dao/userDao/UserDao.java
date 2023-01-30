@@ -3,9 +3,11 @@ package com.marych.insuranceApp.dao.userDao;
 import com.marych.insuranceApp.dao.ConnectionPool;
 import com.marych.insuranceApp.dao.Dao;
 import com.marych.insuranceApp.dao.userDao.rolesDao.UserRoleDaoAppender;
+import com.marych.insuranceApp.service.HashPasswordService;
 import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.info.AppData;
 import com.marych.insuranceApp.user.User;
+import com.marych.insuranceApp.user.userRole.UserRole;
 import com.marych.insuranceApp.user.userSession.UserSessionCreator;
 
 import java.sql.Connection;
@@ -60,20 +62,22 @@ public class UserDao implements Dao<User> {
         }
         return 0;
     }
-
     public boolean addUser() {
-        UserRoleDaoAppender userRoleDaoAppender = new UserRoleDaoAppender();
-        String query = "INSERT INTO \"user\"  VALUES ( ?, ?, ?, ?)";
         int userId = getNextUserId();
+        int userRole = UserRole.getUserRoleIndex(AppData.getInstance().get("userRole"));
         int diiaId = Integer.parseInt(AppData.getInstance().get("diiaId"));
         DiiaCopy userDiiaCopy = new DiiaCopy(diiaId);
+        UserRoleDaoAppender userRoleDaoAppender = new UserRoleDaoAppender();
+        String query = "INSERT INTO \"user\"  VALUES ( ?, ?, ?, ?)";
+        HashPasswordService hashPasswordService = new HashPasswordService();
+        String hashedPassword = hashPasswordService.generatePasswordHash(AppData.getInstance().get("password"));
         try {
             Connection connection = ConnectionPool.getConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setInt(1, userId);
             statement.setString(2, AppData.getInstance().get("login"));
-            statement.setString(3, AppData.getInstance().get("password"));
-            statement.setString(4, userDiiaCopy.getBirthDate());
+            statement.setString(3, hashedPassword);
+            statement.setInt(4, userRole);
             statement.executeUpdate();
             userRoleDaoAppender.addUser(userId, userDiiaCopy);
             UserSessionCreator.create(AppData.getInstance().get("login"));

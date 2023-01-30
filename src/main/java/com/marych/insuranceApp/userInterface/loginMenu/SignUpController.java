@@ -1,9 +1,9 @@
 package com.marych.insuranceApp.userInterface.loginMenu;
 
 import com.marych.insuranceApp.dao.userDao.UserDao;
-import com.marych.insuranceApp.dao.userDao.UserDaoValidator;
-import com.marych.insuranceApp.service.loader.WindowLoader;
+import com.marych.insuranceApp.dao.userDao.UserValidator;
 import com.marych.insuranceApp.service.info.AppData;
+import com.marych.insuranceApp.service.loader.WindowLoader;
 import com.marych.insuranceApp.service.validation.EmailValidation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,10 +26,9 @@ public class SignUpController {
 
     @FXML
     private void signUpButton(ActionEvent event) {
-        UserDao userDao = UserDao.getInstance();
-        UserDaoValidator userDaoValidator = new UserDaoValidator();
+        UserValidator userValidator = new UserValidator();
         String login = loginField.getText();
-        if (userDaoValidator.isLoginExist(login)) {
+        if (userValidator.isLoginExist(login)) {
             errorLabel.setText("Користувач із таким логіном уже існує");
         } else if (passwordField.getText().equals("")) {
             errorLabel.setText("Введіть пароль");
@@ -57,7 +56,7 @@ public class SignUpController {
     private void addUserSessionData() {
         AppData.getInstance().put("login", loginField.getText());
         AppData.getInstance().put("password", passwordField.getText());
-        AppData.getInstance().put("login", emailField.getText());
-        AppData.getInstance().put("userRole", "customer");
+        AppData.getInstance().put("email", emailField.getText());
+        AppData.getInstance().put("userRole", "Customer");
     }
 }

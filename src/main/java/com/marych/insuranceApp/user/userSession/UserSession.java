@@ -4,24 +4,22 @@ import com.marych.insuranceApp.user.userRole.UserRole;
 
 public class  UserSession {
     private static UserSession instance;
+    private final UserSessionLogStatus userSessionLogStatus;
     private String login;
     private final int userId;
     private UserRole userRole;
-    private static int loginAttemptsNumber;
+
 
     private UserSession(int userId,String userName,UserRole userRole) {
         this.userId = userId;
         this.login = userName;
         this.userRole = userRole;
+        this.userSessionLogStatus = new UserSessionLogStatus(this);
     }
     public static void createInstance(int userId,String login,UserRole userRole) {
         if(instance == null) {
             instance = new UserSession(userId,login,userRole);
-            loginAttemptsNumber = 0;
         }
-    }
-    public static void increaseLoginAttemptsNumber(){
-        loginAttemptsNumber++;
     }
     public static UserSession getInstance() {
         return instance;
@@ -39,7 +37,7 @@ public class  UserSession {
         return userRole;
     }
 
-    public static boolean isExceededLoginAttemptsNumber() {
-        return loginAttemptsNumber == 3;
+    public UserSessionLogStatus status() {
+        return userSessionLogStatus;
     }
 }
