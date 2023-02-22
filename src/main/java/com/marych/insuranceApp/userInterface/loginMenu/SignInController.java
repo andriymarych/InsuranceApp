@@ -5,6 +5,7 @@ import com.marych.insuranceApp.dao.userDao.UserValidator;
 import com.marych.insuranceApp.service.loader.WindowLoader;
 import com.marych.insuranceApp.user.userSession.UserSession;
 import com.marych.insuranceApp.user.userSession.UserSessionCreator;
+import com.marych.insuranceApp.user.userSession.UserSessionLogStatus;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -31,19 +32,20 @@ public class SignInController {
         } else {
             errorLabel.setText("Користувача із логіном " + login + " не існує");
         }
-        if (userValidator.validateUser(login,enteredPassword)) {
+        if (userValidator.validateUser(login, enteredPassword)) {
             windowLoader.load(Objects.requireNonNull(getClass().getResource("../mainMenu/MainScene.fxml")));
         } else {
             increaseLoginAttemptsNumber();
         }
     }
-    private void increaseLoginAttemptsNumber(){
+
+    private void increaseLoginAttemptsNumber() {
         UserSession userSession = UserSession.getInstance();
-        assert userSession != null;
-        userSession.status().increaseLoginAttemptsNumber();
-        if(userSession.status().isExceededLoginAttemptsNumber()){
+        UserSessionLogStatus logStatus = userSession.status();
+        logStatus.increaseLoginAttemptsNumber();
+        if (logStatus.isExceededLoginAttemptsNumber()) {
             errorLabel.setText("Ви ввели тричі невірний пароль");
-        }else {
+        } else {
             errorLabel.setText("Ви ввели невірний пароль");
         }
     }

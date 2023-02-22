@@ -2,9 +2,10 @@ package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
 import com.marych.insuranceApp.dao.ConnectionPool;
 import com.marych.insuranceApp.dao.Dao;
-import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.info.AppData;
+import com.marych.insuranceApp.user.personalData.RegistrationPersonalData;
 import com.marych.insuranceApp.user.userRole.InsuranceSpecialist;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,18 +49,18 @@ public class InsuranceSpecialistDao implements UserRoleDao,Dao<InsuranceSpeciali
         return Optional.empty();
     }
 
-    public boolean addUserRole(int userId, DiiaCopy diiaCopy) {
+    public boolean addUserRole(RegistrationPersonalData registrationPersonalData) {
         Connection connection;
         PreparedStatement statement;
         String query = "INSERT INTO \"insurance_specialist\"  VALUES ( ?, ?, ?, ?, ?)";
         try {
             connection = ConnectionPool.getConnection();
             statement = connection.prepareStatement(query);
-            statement.setInt(1, userId);
-            statement.setString(2, diiaCopy.getFirstName());
-            statement.setString(3, diiaCopy.getLastName());
-            statement.setInt(4, Integer.parseInt(AppData.getInstance().get("insuranceCompanyId")));
-            statement.setString(5, AppData.getInstance().get("email"));
+            statement.setInt(1, registrationPersonalData.getUserId());
+            statement.setString(2, registrationPersonalData.getDiiaCopy().getFirstName());
+            statement.setString(3, registrationPersonalData.getDiiaCopy().getLastName());
+            statement.setInt(4, Integer.parseInt(AppData.getInstance().get("InsuranceCompanyId")));
+            statement.setString(5, registrationPersonalData.getEmail());
             statement.executeUpdate();
             return true;
         } catch (SQLException e) {
@@ -67,6 +68,4 @@ public class InsuranceSpecialistDao implements UserRoleDao,Dao<InsuranceSpeciali
         }
         return false;
     }
-
-
 }

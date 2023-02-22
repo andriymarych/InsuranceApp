@@ -24,7 +24,7 @@ public class UserValidator {
         return false;
     }
 
-    public Boolean validateUser(String login , String enteredPassword) {
+    public boolean validateUser(String login , String enteredPassword) {
         String actualPassword = getUserPassword(login);
         HashPasswordService hashPasswordService = new HashPasswordService();
         assert actualPassword != null;

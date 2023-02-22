@@ -4,30 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Add UserDaoValidator,Refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/service/HashPasswordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSessionLogStatus.java" afterDir="false" />
+    <list default="true" id="70ea7921-648e-4861-8e21-b312ca84bb4e" name="Changes" comment="Added HashPasswordService, Refactoring">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/DiiaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/personalData/RegistrationPersonalData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/personalData/UserCredential.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0799d63-0e73-4522-8bb4-2cd630799317.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0799d63-0e73-4522-8bb4-2cd630799317.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b0799d63-0e73-4522-8bb4-2cd630799317/storage_v2/_src_/database/InsuranceDB.uAi2uw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b0799d63-0e73-4522-8bb4-2cd630799317/storage_v2/_src_/database/InsuranceDB.uAi2uw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/InsuranceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/InsuranceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDaoValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDaoValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/UserRoleDaoAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/UserRoleDaoAppender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/CustomerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/InsuranceSpecialistDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/InsuranceSpecialistDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserDaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserDaoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserRoleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserRoleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/service/HashPasswordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/service/HashPasswordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/service/diia/DiiaCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/service/diia/DiiaCopy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userRole/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userRole/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSessionCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/user/userSession/UserSessionCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/InsuranceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/InsuranceApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/UserDaoValidator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/UserRoleDaoAppender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/UserRoleDaoAppender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/CustomerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/CustomerDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/InsuranceSpecialistDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/InsuranceSpecialistDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserRoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/dao/userDao/rolesDao/factory/UserRoleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSessionCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/user/userSession/UserSessionCreator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/service/diia/DiiaCopy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/service/diia/DiiaCopy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignInController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/marych/insuranceApp/userInterface/loginMenu/SignUpController.class" afterDir="false" />
     </list>
@@ -90,7 +97,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.5275862&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -201,7 +208,17 @@
       <workItem from="1675006196957" duration="779000" />
       <workItem from="1675009396865" duration="885000" />
       <workItem from="1675023637807" duration="1000" />
-      <workItem from="1675094011686" duration="9953000" />
+      <workItem from="1675094011686" duration="10653000" />
+      <workItem from="1675166055968" duration="521000" />
+      <workItem from="1675201657540" duration="840000" />
+      <workItem from="1675255350489" duration="2882000" />
+      <workItem from="1675414280764" duration="1053000" />
+      <workItem from="1675552671189" duration="666000" />
+      <workItem from="1675847981289" duration="1952000" />
+      <workItem from="1675932957539" duration="1326000" />
+      <workItem from="1677005453667" duration="10760000" />
+      <workItem from="1677059924727" duration="1265000" />
+      <workItem from="1677098903427" duration="3182000" />
     </task>
     <task id="LOCAL-00001" summary="Added new Policy Hierarchy&#10;&#10;Refactoring">
       <created>1672943902405</created>
@@ -301,7 +318,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673862983719</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added HashPasswordService, Refactoring">
+      <created>1675113050500</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1675113050500</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added HashPasswordService, Refactoring">
+      <created>1675113069532</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1675113069532</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +365,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -357,7 +388,8 @@
     <MESSAGE value="Add UserRole enum system, Refactoring" />
     <MESSAGE value="Add UserRoleDaoAppender, Refactoring" />
     <MESSAGE value="Add UserDaoValidator,Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add UserDaoValidator,Refactoring" />
+    <MESSAGE value="Added HashPasswordService, Refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added HashPasswordService, Refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -368,19 +400,14 @@
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserDaoValidator.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/dao/userDao/UserValidator.java</url>
           <line>11</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/DiiaSignUpController.java</url>
           <line>28</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/marych/insuranceApp/userInterface/loginMenu/SignInController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="106" />
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

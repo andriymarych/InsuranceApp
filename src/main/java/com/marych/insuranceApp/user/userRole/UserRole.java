@@ -1,6 +1,7 @@
 package com.marych.insuranceApp.user.userRole;
 
 public enum UserRole {
+    UNKNOWN("Unknown",0),
     CUSTOMER("Customer", 1),
     INSURANCE_SPECIALIST("InsuranceSpecialist", 2);
     private final String userRoleStr;

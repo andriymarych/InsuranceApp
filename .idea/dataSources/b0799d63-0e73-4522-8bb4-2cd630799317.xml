@@ -11,7 +11,7 @@
 16386||-9223372036854775808|T|G
 16386||10|T|G
 16386||16384|T|G</Grants>
-      <IntrospectionStateNumber>8262</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8273</IntrospectionStateNumber>
       <ServerVersion>14.5</ServerVersion>
       <StartupTime>1674575342</StartupTime>
       <TimeZones>true ACDT
@@ -815,7 +815,7 @@ false Zulu
 13655||10|C|G
 13655||-9223372036854775808|U|G
 13655||10|U|G</Grants>
-      <IntrospectionStateNumber>8262</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8273</IntrospectionStateNumber>
       <ObjectId>16605</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -5906,7 +5906,7 @@ false Zulu
     <schema id="272" parent="4" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>8262</IntrospectionStateNumber>
+      <IntrospectionStateNumber>8273</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>526</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -78860,7 +78860,7 @@ false Zulu
     </table>
     <table id="6181" parent="272" name="diia">
       <ObjectId>16611</ObjectId>
-      <StateNumber>7825</StateNumber>
+      <StateNumber>8272</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -97791,11 +97791,11 @@ policy_id</ColNames>
       <TypeId>23</TypeId>
     </column>
     <column id="9898" parent="6181" name="diia_sign">
-      <DataType>integer|0s</DataType>
+      <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>7822</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>8272</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
     <column id="9899" parent="6181" name="first_name">
       <DataType>varchar(50)|0s</DataType>
@@ -97830,7 +97830,7 @@ policy_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>16614</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>7825</StateNumber>
+      <StateNumber>8272</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>

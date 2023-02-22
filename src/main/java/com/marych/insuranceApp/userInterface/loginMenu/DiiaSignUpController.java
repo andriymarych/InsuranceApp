@@ -1,20 +1,15 @@
 package com.marych.insuranceApp.userInterface.loginMenu;
 
 
+import com.marych.insuranceApp.dao.DiiaDao;
+import com.marych.insuranceApp.service.HashPasswordService;
 import com.marych.insuranceApp.service.info.AppData;
-import com.marych.insuranceApp.service.diia.DiiaCopy;
 import com.marych.insuranceApp.service.loader.WindowLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.util.Objects;
 
 public class DiiaSignUpController {
@@ -29,9 +24,9 @@ public class DiiaSignUpController {
     @FXML
     private void signUpButton(ActionEvent event) {
         int diiaId = Integer.parseInt(diiaIdField.getText());
-        int diiaSign = Integer.parseInt(diiaSignField.getText());
+        String diiaSign = diiaSignField.getText();
         WindowLoader windowLoader = new WindowLoader(event);
-        if (validateDiiaDocument(diiaId, diiaSign)) {
+        if (validateDiiaSign(diiaId, diiaSign)) {
             AppData.getInstance().put("diiaId", String.valueOf(diiaId));
             windowLoader.load(Objects.requireNonNull(getClass().getResource("SignUpScene.fxml")));
         } else {
@@ -39,14 +34,17 @@ public class DiiaSignUpController {
         }
     }
 
+    public boolean validateDiiaSign(int diiaId, String enteredDiiaSign) {
+        DiiaDao diiaDao = DiiaDao.getInstance();
+        String actualDiiaSign = diiaDao.getDiiaSign(diiaId);
+        HashPasswordService hashPasswordService = new HashPasswordService();
+        assert actualDiiaSign != null;
+        return hashPasswordService.validatePassword(enteredDiiaSign, actualDiiaSign);
+    }
+
     @FXML
     private void returnButton(ActionEvent event) {
         WindowLoader windowLoader = new WindowLoader(event);
         windowLoader.load(Objects.requireNonNull(getClass().getResource("../loginMenu/LoginScene.fxml")));
-    }
-
-    private boolean validateDiiaDocument(int diiaId, int diiaSign) {
-        DiiaCopy diiaCopy = new DiiaCopy(diiaId);
-        return diiaSign == diiaCopy.getDiiaSign();
     }
 }

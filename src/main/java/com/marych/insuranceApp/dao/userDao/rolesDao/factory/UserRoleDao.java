@@ -1,8 +1,8 @@
 package com.marych.insuranceApp.dao.userDao.rolesDao.factory;
 
-import com.marych.insuranceApp.service.diia.DiiaCopy;
+import com.marych.insuranceApp.user.personalData.RegistrationPersonalData;
 
 public interface UserRoleDao {
 
-    boolean addUserRole(int userId, DiiaCopy diiaCopy);
+    boolean addUserRole(RegistrationPersonalData registrationPersonalData);
 }
